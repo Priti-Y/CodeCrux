@@ -191,9 +191,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     alignItems: "center",
     justifyContent: "flex-start", // 👈 IMPORTANT
-    maxWidth: 500,
-    alignSelf: "center",
-    width: "100%",
   },
   title: {
     color: "#fff",
