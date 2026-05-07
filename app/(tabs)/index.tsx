@@ -13,7 +13,7 @@ import ConfettiCannon from "react-native-confetti-cannon";
 
 const MAX_ATTEMPTS = 7;
 const screenWidth = Dimensions.get("window").width;
-const boxSize = Math.min((screenWidth - 80) / 4, 90);
+const boxSize = Math.min((screenWidth - 120) / 4, 65);
 const STORAGE_KEY = "codecrux-daily-state";
 
 function generateDailyNumber() {
@@ -186,15 +186,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#000",
-    paddingTop: 20,
-    paddingBottom: 20,
+    paddingTop: 8,
+    paddingBottom: 80,
     paddingHorizontal: 12,
     alignItems: "center",
-    justifyContent: "flex-start", // 👈 IMPORTANT
   },
   title: {
     color: "#fff",
-    fontSize: 36,
+    fontSize: 46,
     fontWeight: "bold",
     textAlign: "center",
     width: "100%",
@@ -203,14 +202,14 @@ const styles = StyleSheet.create({
   caption: {
     color: "#888",
     textAlign: "center",
-    marginBottom: 12,
+    marginBottom: 10,
     marginTop: 0,
     width: "100%",
     alignSelf: "center",
   },
   row: {
+    position: "relative",
     flexDirection: "row",
-    alignItems: "center",
     justifyContent: "center",
     marginBottom: 8,
   },
@@ -230,20 +229,29 @@ const styles = StyleSheet.create({
     borderRadius: 12,
   },
   boxText: { color: "#fff", fontSize: 24, fontWeight: "bold" },
-  resultRow: { marginLeft: 12 },
+  resultRow: {
+    position: "absolute",
+    right: -70,
+    top: "50%",
+    transform: [{ translateY: -18 }],
+    width: 60,
+    alignItems: "flex-start",
+  },
   exact: { color: "#4ade80", fontWeight: "bold" },
   misplaced: { color: "#facc15", fontWeight: "bold" },
   boardWrapper: {
-    marginTop: 30,
+    flex: 1,
+    justifyContent: "center",
     alignItems: "center",
     width: "100%",
   },
   inputBar: {
     flexDirection: "row",
-    marginTop: 30,
-    marginBottom: 20,
+    marginTop: 20,
+    width: "100%",
     alignItems: "center",
     justifyContent: "center",
+    paddingHorizontal: 8,
   },
   input: {
     width: boxSize * 0.9 * 4 + 40,
